@@ -1,25 +1,34 @@
-<div v-show="vehicles.length" class="mb-4">
-  <h1 class="mb-4"><i class="fa fa-rocket"></i> Vehicles</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Model</th>
-        <th>Manufacturer</th>
-        <th>Class</th>
-        <th>Cost</th>
-        <th>Speed</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="vehicle in vehicles">
-        <td>{{vehicle.name}}</td>
-        <td>{{vehicle.model}}</td>
-        <td>{{vehicle.manufacturer}}</td>
-        <td>{{vehicle.vehicle_class}}</td>
-        <td>{{vehicle.cost_in_credits}}</td>
-        <td>{{vehicle.max_atmosphering_speed}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<transition
+  name="vehicles-appear-animation"
+  enter-active-class="animated flipInY">
+
+  <div v-show="vehicles.length" class="mb-4">
+    <h1 class="mb-4"><i class="fa fa-rocket"></i> Vehicles</h1>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-xs-6">Name</th>
+          <th class="col-xs-6">Model</th>
+          <!-- hide rightmost columns for mobile viewing -->
+          <th class="d-none d-md-table-cell">Manufacturer</th>
+          <th class="d-none d-md-table-cell">Class</th>
+          <th class="d-none d-md-table-cell">Cost</th>
+          <th class="d-none d-lg-table-cell">Speed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="vehicle in vehicles">
+          <td class="col-xs-6">{{vehicle.name}}</td>
+          <td class="col-xs-6">{{vehicle.model}}</td>
+          <td class="d-none d-md-table-cell">{{vehicle.manufacturer}}</td>
+          <td class="d-none d-md-table-cell">{{vehicle.vehicle_class}}</td>
+          <td class="d-none d-md-table-cell">{{vehicle.cost_in_credits}}</td>
+          <td class="d-none d-lg-table-cell">{{vehicle.max_atmosphering_speed}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</transition>

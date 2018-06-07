@@ -159,11 +159,11 @@ export default {
         },
 
 
-        addTitle: function(t, svg, w) {
+        addTitle: function(t, svg, /* w */) {
           svg.append('text')
-            .attr('x', w / 2)
-            .attr('text-anchor', 'middle')
+            .attr('x', 0)
             .attr('y', 0)
+            .attr('text-anchor', 'left')
             .attr('font-size','20px')
             .text(t);
         }

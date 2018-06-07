@@ -2,7 +2,7 @@
 <template>
   <div class="content">
     <div class="segment">
-      <svg class="chart" id="chart" width="400" height="250"></svg>
+      <svg class="chart" id="chart" width="300" height="300"></svg>
     </div>
   </div>
 </template>
@@ -25,8 +25,8 @@ export default {
       //dataSet: [],
       options: {
         dim: 'name',
-        height: 175,
-        width: 250
+        height: 200,
+        width: 200
       }
     }
   },
@@ -57,7 +57,7 @@ export default {
   align-content:center;
 }
 .chart {
-  padding: 20px;
+  padding: 20px 0;
   display: block;
   margin: auto;
   /* background: #EEFFFF; */

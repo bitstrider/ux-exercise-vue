@@ -1,6 +1,6 @@
 <transition
   name="person-appear-animation"
-  enter-active-class="animated flipInX">
+  enter-active-class="animated flipInY">
   <div v-if="person.name">
     <div class="card card-block">
       <h1 class="card-title">{{ person.name }}</h1>
@@ -8,9 +8,11 @@
       <p class="card-text">Weight: {{ person.mass }}</p>
       <p class="card-text">Gender: {{ person.gender }}</p>
       <p v-if="person.vehicles.length === 0" class="card-text">Vehicles: None</p>
-      <p v-else class="card-text">Vehicles: {{person.vehicles.length}} Total
+      <p v-else class="card-text">Vehicles: {{person.vehicles.length}} <small>[see details below]</small>
+        <br></br>
         <vehicle
           v-for="url in person.vehicles"
+          :key="url"
           v-bind:url="url">
         </vehicle>
       </p>
@@ -20,8 +22,8 @@
     <router-link class="" to="/people">
       <i class="fa fa-chevron-left"></i> Back to people
     </router-link>
-    <router-link class="btn btn-outline-info float-right" :to="{ name: 'editPost', params: { id: person.id }}">
+    <!-- <router-link class="btn btn-outline-info float-right" :to="{ name: 'editPost', params: { id: person.id }}">
       <i class="fa fa-pencil"></i> Edit
-    </router-link>
+    </router-link> -->
   </div>
 </transition>
