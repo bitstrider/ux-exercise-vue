@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
 import Navigation from 'components/Navigation/navigation';
 import Loader from 'components/Loader/loader';
+import Vehicle from 'src/components/Vehicles/vehicle'
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,7 @@ new Vue({
   components: {
     Navigation,
     Loader,
+    Vehicle,
   },
 
   data(){

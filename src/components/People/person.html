@@ -7,6 +7,14 @@
       <p class="card-text">Height: {{ person.height }}</p>
       <p class="card-text">Weight: {{ person.mass }}</p>
       <p class="card-text">Gender: {{ person.gender }}</p>
+      <p v-if="person.vehicles.length === 0" class="card-text">Vehicles: None</p>
+      <p v-else class="card-text">Vehicles: {{person.vehicles.length}} Total
+        <vehicle
+          v-for="url in person.vehicles"
+          v-bind:url="url">
+        </vehicle>
+      </p>
+
     </div>
     <hr>
     <router-link class="" to="/people">
