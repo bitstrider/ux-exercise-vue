@@ -87,16 +87,20 @@ $fa-font-path: "~font-awesome/fonts";
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
-$white:  #fff !default;
 $black:  #000 !default;
 $red:    #d9534f !default;
-$orange: #f0ad4e !default;
 $yellow: #ffd500 !default;
 $green:  #5cb85c !default;
-$blue:   #0275d8 !default;
 $teal:   #5bc0de !default;
 $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
+
+// Theme colors
+$white:  #fff !default;
+$orange: #f99820 !default;
+$navy:   #09264a !default;
+$blue:   #2081f9 !default;
+$grey:   #bbbbbb !default;
 
 // Create grayscale
 $gray-dark:                 #292b2c !default;
@@ -111,7 +115,7 @@ $brand-success:             $green !default;
 $brand-info:                $teal !default;
 $brand-warning:             $orange !default;
 $brand-danger:              $red !default;
-$brand-inverse:             $gray-dark !default;
+$brand-inverse:             $navy !default;
 
 
 // Options
@@ -234,6 +238,12 @@ $grid-gutter-widths: (
   lg: $grid-gutter-width-base,
   xl: $grid-gutter-width-base
 ) !default;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Roboto+Condensed);
+
+// Font Variables
+$roboto-slab: 'Roboto Slab', serif;
+$roboto-condensed: 'Roboto Condensed', sans-serif;
 
 // Fonts
 //

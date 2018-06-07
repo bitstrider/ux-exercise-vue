@@ -1,0 +1,16 @@
+<transition
+  name="vehicle-appear-animation"
+  enter-active-class="animated fadeInDown">
+  <div class="person-vehicles" v-if="vehicle.name">
+    <div class="vehicle-card card card-block">
+      <h3 class="card-title">{{vehicle.name}}</h3>
+      <p class="card-text">Model: {{vehicle.model}}</p>
+      <p class="card-text">Manufacturer: {{vehicle.manufacturer}}</p>
+      <p class="card-text">Class: {{vehicle.vehicle_class}}</p>
+      <p class="card-text">Cost: {{vehicle.cost_in_credits}}</p>
+      <p class="card-text">Speed: {{vehicle.max_atmosphering_speed}}</p>
+    </div>
+    <hr>
+
+  </div>
+</transition>
