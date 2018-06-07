@@ -1,6 +1,8 @@
 <div v-show="people.length" class="mb-4">
   <h1 class="mb-4"><i class="fa fa-user"></i> People</h1>
 
+  <Chart v-if="people.length" v-bind:dataSet="chartedPeople"/>
+
   <div class="form-group">
     <input class="form-control" placeholder="Filter people..." v-model="peopleFilter">
   </div>
