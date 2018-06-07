@@ -1,4 +1,6 @@
 // adapted from https://github.com/ignoreintuition/d3vue/blob/master/src/v-charts/index.js
+import {router} from 'src/main'
+
 export default {
   install: function(Vue) {
     Vue.prototype.$helpers = {
@@ -109,8 +111,9 @@ export default {
               svg.selectAll('.tt').remove();
             })
 
+            // navigate to Person page for selected person
             .on('click', (d) => {
-              console.log('clickity!', d);
+              router.push(`/people/${d.id}`)
             })
 
             .attr('transform', 'translate(0,' + offset + ')')

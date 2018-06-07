@@ -6,6 +6,8 @@ import * as d3 from 'd3';
 
 import Chart from './chart'
 
+import {extractId} from 'src/util/helpers'
+
 const animation = 'flipInX';
 const animationDelay = 25; // in ms
 
@@ -49,6 +51,7 @@ export default Vue.extend({
       return this.people.map(p => {
         return {
           name:p.name,
+          id:p.id,
           height:isNaN(p.height) ? 0 : Number(p.height),
           mass:isNaN(p.mass) ? 0 : Number(p.mass)
         }
@@ -67,7 +70,7 @@ export default Vue.extend({
       }
       return starWarsResource.get('/people/' + (page ? `?page=${page}`: ''))
         .then((response) => {
-          let newPeople = response.data.results.map(p => Object.assign(p, {id: p.url.slice(-2).slice(0,1)}))
+          let newPeople = response.data.results.map(p => Object.assign(p, {id: extractId(p.url)}))
           this.people = this.people.concat(newPeople);
 
           if (response.data.next) {
